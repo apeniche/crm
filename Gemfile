@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# use rails-assets.org  https://rails-assets.org/
+gem 'bundler', '>= 1.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -42,5 +44,10 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  source 'https://rails-assets.org' do
+    gem 'rails-assets-bootstrap'
+	gem 'rails-assets-angular'
+  end		
 end
 
