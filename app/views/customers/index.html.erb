@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Customers</h1>
+<h1 class="col-md-offset-4">Welcome to CloudCRM</h1>
+
+<h2>Your Current Customers are Listed Below</h2>
 
 <table>
   <thead>
@@ -23,5 +25,7 @@
 </table>
 
 <br>
-<button type="submit" class="btn btn-warning">haha</button>
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'New Customer', new_customer_path, class: "btn btn-warning" %>
+
+
+<br>
