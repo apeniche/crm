@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
-//= require angular
+//= require bootstrap/dist/js/bootstrap.min.js
+//= require angular/angular.min.js
+//= require ngDialog/js/ngDialog.min.js
 //= require_tree .
