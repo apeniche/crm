@@ -1,5 +1,10 @@
 <h2>Rockin with ngDialog</h2>
+<script type="text/ng-template" id="popupTmpl">
+    <h1>Template heading</h1>
+    <p>Content goes here</p>
+</script>
 
 <div ng-app="collectApp" ng-controller="MainCtrl">
-	<input type="text" ng-model="writ">
+	<input type="text" ng-model="writ">Haha, did you say {{writ}}?! uy!!
+	<button class="btn btn-lg btn-success" type="submit" ng-click="clickToOpen()">Kwaana Dembo!</button>
 </div>

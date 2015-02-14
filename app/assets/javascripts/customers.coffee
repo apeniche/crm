@@ -7,6 +7,6 @@ app = angular.module('collectApp', ['ngDialog'])
 
 app.controller('MainCtrl', ($scope, ngDialog) ->
 	$scope.clickToOpen = ->
-        ngDialog.open({ template: 'popupTmpl.html' })
+        ngDialog.open({ template: 'popupTmpl' })
 
 	)

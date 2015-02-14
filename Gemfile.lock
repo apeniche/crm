@@ -106,10 +106,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.0)
       sprockets-rails
-    rails-assets-angular (1.3.12)
-    rails-assets-bootstrap (3.3.2)
-      rails-assets-jquery (>= 1.9.1)
-    rails-assets-jquery (2.1.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.5)
@@ -179,8 +175,6 @@ DEPENDENCIES
   jquery-rails
   mongoid (~> 4.0.0)
   rails (= 4.2.0)
-  rails-assets-angular!
-  rails-assets-bootstrap!
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
