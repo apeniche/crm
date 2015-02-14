@@ -1,2 +1,33 @@
     <h1>Template heading</h1>
-    <p>Content goes here</p>
+    <p>what just happen?! eh, tell me what happen!</p>
+    <input type="text" ng-model="test">Haha, did you say {{test}}?! uy!!
+    <h4>what? {{ prompts }}</h4>
+
+    <form>
+
+        <div class="form-group">
+
+            <label for="inputEmail">Email</label>
+
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="inputPassword">Password</label>
+
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+
+        </div>
+
+        <div class="checkbox">
+
+            <label><input type="checkbox"> Remember me</label>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+
+    </form>
+

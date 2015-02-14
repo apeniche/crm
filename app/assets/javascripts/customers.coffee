@@ -7,6 +7,10 @@ app = angular.module('collectApp', ['ngDialog'])
 
 app.controller('MainCtrl', ($scope, ngDialog) ->
 	$scope.clickToOpen = ->
-        ngDialog.open({ template: 'popupTmpl' })
-
+        ngDialog.open({ 
+            template: 'popupTmpl', 
+            controller: ['$scope', ($scope) -> 
+                $scope.prompts = "Haha, so you think I'm the real Quade?!"
+            ]
+        })
 	)
