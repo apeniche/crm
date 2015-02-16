@@ -1,23 +1,21 @@
-    <h1>Template heading</h1>
-    <p>what just happen?! eh, tell me what happen!</p>
-    <input type="text" ng-model="test">Haha, did you say {{test}}?! uy!!
-    <h4>what? {{ prompts }}</h4>
-
+    <h1>Data Collector</h1>
+    <p>Please enter Customer's information below</p>
+  
     <form>
 
         <div class="form-group">
 
-            <label for="inputEmail">Email</label>
+            <label for="name">Name</label>
 
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            <input type="name" class="form-control" id="name" placeholder="Name">
 
         </div>
 
         <div class="form-group">
 
-            <label for="inputPassword">Password</label>
+            <label for="Address">Address</label>
 
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="text" class="form-control" id="address" placeholder="Address">
 
         </div>
 
@@ -27,7 +25,7 @@
 
         </div>
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary">Enter</button>
 
     </form>
 
