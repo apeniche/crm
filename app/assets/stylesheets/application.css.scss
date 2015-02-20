@@ -11,6 +11,10 @@
  * file per style scope.
  *
  *= require_tree .
- *= require bootstrap
+ * require bootstrap
+ *= require bootstrap/dist/css/bootstrap.min.css
+ *= require bootstrap/dist/css/bootstrap-theme.min.css
+ *= require ngDialog/css/ngDialog.min.css
+ *= require ngDialog/css/ngDialog-theme-default.min.css
  *= require_self
  */

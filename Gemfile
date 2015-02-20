@@ -46,8 +46,8 @@ group :development, :test do
   gem 'spring'
 
   source 'https://rails-assets.org' do
-    gem 'rails-assets-bootstrap', group: :development
-	  gem 'rails-assets-angular', group: :development
+    #gem 'rails-assets-bootstrap', group: :development
+	  #gem 'rails-assets-angular', group: :development
   end
 gem 'rails_12factor', group: :production
 		
