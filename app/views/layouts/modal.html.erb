@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CloudCrm</title>
+  <%= stylesheet_link_tag    'modal', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <%= javascript_include_tag 'modal', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'shared/navigation' %>
+
+ 
+
+
+
+
+
+
+
+
+<div class="container" ng-app="App" ng-controller="AppCtrl as app">
+	<button type="button" ng-click="app.open()" class="btn btn-large btn-primary ng-scope">
+	Enter Customer Answers!
+	</button>
+</div>
+<%= yield %>
+	
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-animate.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+</body>
+</html>
