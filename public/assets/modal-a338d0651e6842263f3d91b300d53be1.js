@@ -11865,10 +11865,60 @@ e.$validators.maxlength=function(a,c){return 0>f||e.$isEmpty(c)||c.length<=f}}}}
     return app.open = function() {
       var modalInstance;
       return modalInstance = $modal.open({
-        templateUrl: 'partials/wizard.html',
+        templateUrl: '/partials/wizard.html',
         controller: 'ModalCtrl',
         controllerAs: 'modal'
       });
+    };
+  });
+
+  modalapp.controller('ModalCtrl', function($scope, $modalInstance) {
+    var modal, number_of_questions, questions, _i, _results;
+    modal = this;
+    questions = [
+      {
+        "index": 1,
+        "question": "What is your nationality?",
+        "default_answer": "Not answered"
+      }
+    ];
+    number_of_questions = 100;
+    modal.steps = (function() {
+      _results = [];
+      for (_i = 1; _i <= 100; _i++){ _results.push(_i); }
+      return _results;
+    }).apply(this);
+    modal.step = 0;
+    $scope.steps = modal.steps;
+    modal.wizard = {
+      question: 1,
+      answer: ''
+    };
+    modal.isCurrentStep = function(step) {
+      return modal.step === step;
+    };
+    modal.setCurrentStep = function(step) {
+      return modal.step = step;
+    };
+    modal.getCurrentStep = function() {
+      return modal.steps[modal.step];
+    };
+    modal.getCurrentQuestion = function() {
+      return questions[modal.step];
+    };
+    modal.canShow = function(question) {
+      var difference;
+      difference = question - modal.step;
+      if (difference > 2) {
+        return false;
+      } else if (difference < -2) {
+        return false;
+      } else {
+        return true;
+      }
+    };
+    return modal.getNextLabel = function() {
+      return "Next";
     };
   });
 
