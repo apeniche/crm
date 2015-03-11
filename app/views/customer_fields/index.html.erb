@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Customer Fields</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field name</th>
+      <th>Field type</th>
+      <th>Validity period</th>
+      <th>Customer field</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customer_fields.each do |customer_field| %>
+      <tr>
+        <td><%= customer_field.field_name %></td>
+        <td><%= customer_field.field_type %></td>
+        <td><%= customer_field.validity_period %></td>
+        <td><%= customer_field.customer_field_id %></td>
+        <td><%= link_to 'Show', customer_field %></td>
+        <td><%= link_to 'Edit', edit_customer_field_path(customer_field) %></td>
+        <td><%= link_to 'Destroy', customer_field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer field', new_customer_field_path %>

@@ -1,0 +1,2 @@
+module CustomerFieldsHelper
+end
