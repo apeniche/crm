@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :macroeconomic_variables
+
   resources :customer_field_values
 
   resources :customer_fields

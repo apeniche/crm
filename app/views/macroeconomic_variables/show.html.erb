@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @macroeconomic_variable.country_id %>
+</p>
+
+<p>
+  <strong>Variable name:</strong>
+  <%= @macroeconomic_variable.variable_name %>
+</p>
+
+<p>
+  <strong>Variable type:</strong>
+  <%= @macroeconomic_variable.variable_type %>
+</p>
+
+<p>
+  <strong>Variable value:</strong>
+  <%= @macroeconomic_variable.variable_value %>
+</p>
+
+<%= link_to 'Edit', edit_macroeconomic_variable_path(@macroeconomic_variable) %> |
+<%= link_to 'Back', macroeconomic_variables_path %>

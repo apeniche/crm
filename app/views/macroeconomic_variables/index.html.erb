@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Macroeconomic Variables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Variable name</th>
+      <th>Variable type</th>
+      <th>Variable value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @macroeconomic_variables.each do |macroeconomic_variable| %>
+      <tr>
+        <td><%= macroeconomic_variable.country_id %></td>
+        <td><%= macroeconomic_variable.variable_name %></td>
+        <td><%= macroeconomic_variable.variable_type %></td>
+        <td><%= macroeconomic_variable.variable_value %></td>
+        <td><%= link_to 'Show', macroeconomic_variable %></td>
+        <td><%= link_to 'Edit', edit_macroeconomic_variable_path(macroeconomic_variable) %></td>
+        <td><%= link_to 'Destroy', macroeconomic_variable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Macroeconomic variable', new_macroeconomic_variable_path %>
