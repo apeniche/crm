@@ -1,5 +1,7 @@
 class Question
   include Mongoid::Document
+  include Mongoid::Timestamps
+  
   field :body, type: String
   field :category, type: String
   field :interval, type: String
