@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :customer_field_values
+
   resources :customer_fields
 
   resources :questions

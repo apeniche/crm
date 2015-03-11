@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @customer_field_value.customer_id %>
+</p>
+
+<p>
+  <strong>Customer field:</strong>
+  <%= @customer_field_value.customer_field_id %>
+</p>
+
+<p>
+  <strong>Field value:</strong>
+  <%= @customer_field_value.field_value %>
+</p>
+
+<%= link_to 'Edit', edit_customer_field_value_path(@customer_field_value) %> |
+<%= link_to 'Back', customer_field_values_path %>
