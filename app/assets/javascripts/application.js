@@ -16,4 +16,5 @@
 //= require bootstrap/dist/js/bootstrap.min.js
 //= require angular/angular.min.js
 //= require ngDialog/js/ngDialog.min.js
+//= require bootstrap-material-design
 //= require_tree .
