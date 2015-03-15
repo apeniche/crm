@@ -18,15 +18,15 @@
         <td>Alex Jones</td>
         <td></td>
         <td><%= link_to 'Show', customer, :class => 'btn btn-success' %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn btn-warning'  %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'  %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn btn-success'  %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-success'  %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to('New Customer', new_customer_path, class: "btn btn-warning", data: { no_turbolink: true}) %>
+<%= link_to('New Customer', new_customer_path, class: "btn btn-success", data: { no_turbolink: true}) %>
 
 
 <br>
