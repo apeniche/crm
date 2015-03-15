@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation" style="background:#1ABC9C;">
+<nav class="navbar navbar-small" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -7,23 +7,16 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/" data-no-turbolink="true">CloudCRM</a>
+				<a class="btn btn-warning btn-raised navbar-btn btn-lg" href="/" data-no-turbolink="true"><strong>CloudCRM</strong></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div ng-app="App" ng-controller="AppCtrl as app" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group" ng-app="App" ng-controller="AppCtrl as app">
-							<button type="button" ng-click="app.open()" class="btn btn-raised btn-large btn-success ng-scope">
-							Enter Customer Answers!
-							</button>						
-					</div>
-				</form>
-					<li><a href="/customers" data-no-turbolink="true">Manage Customers</a></li>
-					<li><a href="/questions" data-no-turbolink="true">Set Questions</a></li>
+					<li><a href="/customers" data-no-turbolink="true"><strong>Manage Customers</strong></a></li>
+					<li><a href="/questions" data-no-turbolink="true"><strong>Set Questions</strong></a></li>
 					<li class="dropdown">
-						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Manage <b class="caret"></b></a>
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Manage</strong> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/macroeconomic_variables" data-no-turbolink="true">Macroeconomic Variables</a></li>
 							<li><a href="/customer_field_values" data-no-turbolink="true">Customer Field Values</a></li>
@@ -33,12 +26,13 @@
 							<li class="divider"></li>
 							<li><a href="/collect" data-no-turbolink="true">DataCollector</a></li>
 						</ul>
-					</li>
+					</li>		
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="javascript:void(0)">About</a></li>
+				<ul class="nav navbar-nav navbar-right nav-pills">
+					<li><a ng-click="app.open()" class="ng-scope bg-info active btn-default"><strong>Enter Customer Answers <span class="badge">!</span></strong></a></li>
+					<li><a href="javascript:void(0)"><strong>About</strong></a></li>
 					<li class="dropdown">
-						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Logout <b class="caret"></b></a>
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Logout</strong> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="javascript:void(0)">Action</a></li>
 							<li><a href="javascript:void(0)">Another action</a></li>
