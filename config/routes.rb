@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :variables
+
+  resources :variable_types
+
   resources :macroeconomic_variables
 
   resources :customer_field_values
