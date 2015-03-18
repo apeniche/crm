@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap.min.js
+//= require bootstrap-material-design/dist/js/material.min.js
+//= require bootstrap-material-design/dist/js/ripples.min.js
 //= require angular/angular.min.js
 //= require app

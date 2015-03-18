@@ -1,24 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @question.body %>
-</p>
+<ul class="list-group">
+  
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="list-group">
+          <strong>
+	      	<a href="/questions/<%= @question.id %>" class="list-group-item list-group-item-info">
+	            Question: <span class="list-group-item list-group-item-danger"><%= @question.body %></span>
+	            Category: <span class="list-group-item list-group-item-info"><%= @question.category %></span>
+	            Time Interval: <span class="list-group-item list-group-item-warning"><%= @question.interval %></span>
+	            Default Answer: <span class="list-group-item list-group-item-warning"><%= @question.default_answer %></span>
+          	</a>
+          </strong>       
+        </div>
+      </div>
+    </div>
+</ul>
 
-<p>
-  <strong>Category:</strong>
-  <%= @question.category %>
-</p>
-
-<p>
-  <strong>Interval:</strong>
-  <%= @question.interval %>
-</p>
-
-<p>
-  <strong>Default answer:</strong>
-  <%= @question.default_answer %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<%= link_to 'Edit', edit_question_path(@question), class: "btn" %> |
+<%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> |
+<%= link_to 'Back', questions_path, class: "btn btn-info" %>

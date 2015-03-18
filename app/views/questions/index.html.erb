@@ -2,32 +2,28 @@
 
 <h1>Listing Questions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th>Category</th>
-      <th>Interval</th>
-      <th>Default answer</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="list-group">
+  <% @questions.each do |question| %>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="list-group">
+          <a href="/questions/<%= question.id %>" class="list-group-item list-group-item-info">
+            Question: <span class="list-group-item list-group-item-danger"><%= question.body %></span>
+            Category: <span class="list-group-item list-group-item-info"><%= question.category %></span>
+            Time Interval: <span class="list-group-item list-group-item-warning"><%= question.interval %></span>
+            Default Answer: <span class="list-group-item list-group-item-warning"><%= question.default_answer %></span>
+          </a>       
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.body %></td>
-        <td><%= question.category %></td>
-        <td><%= question.interval %></td>
-        <td><%= question.default_answer %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</ul>
 
 <br>
 
 <%= link_to 'New Question', new_question_path, class: "btn btn-raised btn-primary" %>
+
+
+
