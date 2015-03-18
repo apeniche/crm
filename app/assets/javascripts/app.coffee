@@ -27,7 +27,8 @@ modalapp.controller('ModalCtrl', ($scope, $modalInstance)->
 	# to answer questions
 
 	#here is a stub of how the questions will be retrieved in JSON from the database
-	$scope.questions = [{"index": 1, "question": "What is your nationality?", "default_answer": "Not answered"}]
+	#$scope.questions = [{"index": 1, "question": "What is your nationality?", "default_answer": "Not answered"}]
+	$scope.questions = ["1. What is your ID number?"]
 	number_of_questions = 100
 	modal.steps = [1..100]
 	modal.step = 0
