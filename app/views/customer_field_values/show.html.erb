@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @customer_field_value.customer_id %>
-</p>
+<ul class="list-group">
+  
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+      	<h3> <%= @customer_field_value.customer_id %> </h3>
+        <div class="list-group">
+          <strong>
+	      	<a href="/customer_field_values/<%= @customer_field_value.id %>" class="list-group-item list-group-item-info">
+	            Customer: <span class="list-group-item list-group-item-danger"><%= @customer_field_value.customer_id %></span>
+	            Customer field: <span class="list-group-item list-group-item-info"><%= @customer_field_value.customer_field_id %></span>	           
+	            Field value: <span class="list-group-item list-group-item-info"><%= @customer_field_value.field_value %></span>
+          	</a>
+          </strong>       
+        </div>
+      </div>
+    </div>
+</ul>
 
-<p>
-  <strong>Customer field:</strong>
-  <%= @customer_field_value.customer_field_id %>
-</p>
 
-<p>
-  <strong>Field value:</strong>
-  <%= @customer_field_value.field_value %>
-</p>
-
-<%= link_to 'Edit', edit_customer_field_value_path(@customer_field_value) %> |
-<%= link_to 'Back', customer_field_values_path %>
+<%= link_to 'Edit', edit_customer_field_value_path(@customer_field_value), class: "btn" %> |
+<%= link_to 'Destroy', @customer_field_value, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> |
+<%= link_to 'Back', customer_field_values_path, class: "btn btn-info" %>
