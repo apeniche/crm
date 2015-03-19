@@ -1,9 +1,9 @@
 modalapp = angular.module('App', ['ngAnimate', 'ui.bootstrap'])
 
-modalapp.controller('AppCtrl', ($modal) ->
+modalapp.controller('AppCtrl', ($scope, $modal) ->
 		app = this
 
-		app.open = ->
+		$scope.open = ->
 			modalInstance = $modal.open({
 				templateUrl: '/partials/wizard.html',
 				controller: 'ModalCtrl',
@@ -28,7 +28,7 @@ modalapp.controller('ModalCtrl', ($scope, $modalInstance)->
 
 	#here is a stub of how the questions will be retrieved in JSON from the database
 	#$scope.questions = [{"index": 1, "question": "What is your nationality?", "default_answer": "Not answered"}]
-	$scope.questions = ["1. What is your ID number?"]
+	$scope.questions = ["1. What is your national ID number?"]
 	number_of_questions = 100
 	modal.steps = [1..100]
 	modal.step = 0
