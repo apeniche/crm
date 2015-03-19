@@ -35,6 +35,9 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+  # prevent mangling so AngularJS parameters can be recognised
+  config.assets.js_compressor = Uglifier.new(mangle: false)
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
