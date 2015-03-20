@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @macroeconomic_variable.country_id %>
-</p>
+<ul class="list-group">
+  
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+      	<h3> <%= @macroeconomic_variable.variable_name %> </h3>
+        <div class="list-group list-group-item-info">
+          <strong>
+	      	<a href="/macroeconomic_variables/<%= @macroeconomic_variable.id %>" class="list-group-item list-group-item-info">
+	            Country: <span class="list-group-item list-group-item-danger"><%= @macroeconomic_variable.country_id %></span>
+	            Variable name: <span class="list-group-item list-group-item-info"><%= @macroeconomic_variable.variable_name %></span>	           
+	            Variable type: <span class="list-group-item list-group-item-info"><%= @macroeconomic_variable.variable_type %></span>
+	            Variable value: <span class="list-group-item list-group-item-info"><%= @macroeconomic_variable.variable_value %></span>
+          	</a>
+          </strong>       
+        </div>
+      </div>
+    </div>
+</ul>
 
-<p>
-  <strong>Variable name:</strong>
-  <%= @macroeconomic_variable.variable_name %>
-</p>
 
-<p>
-  <strong>Variable type:</strong>
-  <%= @macroeconomic_variable.variable_type %>
-</p>
-
-<p>
-  <strong>Variable value:</strong>
-  <%= @macroeconomic_variable.variable_value %>
-</p>
-
-<%= link_to 'Edit', edit_macroeconomic_variable_path(@macroeconomic_variable) %> |
-<%= link_to 'Back', macroeconomic_variables_path %>
+<%= link_to 'Edit', edit_macroeconomic_variable_path(@macroeconomic_variable), class: "btn" %> |
+<%= link_to 'Destroy', @macroeconomic_variable, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> |
+<%= link_to 'Back', macroeconomic_variables_path, class: "btn btn-info" %>
