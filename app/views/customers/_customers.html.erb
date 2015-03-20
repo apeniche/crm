@@ -15,7 +15,7 @@
     <% @customers.each do |customer| %>
       <tr>
         <td><%= customer.country_id %></td>
-        <td>Alex Jones</td>
+        <td><%= customer.name || "Alex Jones" %></td>
         <td></td>
         <td><%= link_to 'Show', customer, :class => 'btn btn-success' %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn btn-success'  %></td>
