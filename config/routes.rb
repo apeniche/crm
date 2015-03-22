@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories
+
   resources :variables
 
   resources :variable_types
