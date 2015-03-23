@@ -16,9 +16,11 @@
 					<li><a href="/customers" data-no-turbolink="true"><strong>Manage Customers</strong></a></li>
 					<li><a href="/questions" data-no-turbolink="true"><strong>Set Questions</strong></a></li>
 					<li class="dropdown">
-						<a href="javascript:void(0)" class="dropdown-toggle" data-no-turbolink="true" data-toggle="dropdown"><strong>Manage</strong> <b class="caret"></b></a>
+						<a href="javascript:void(0)" class="dropdown-toggle" data-no-turbolink="true" data-toggle="dropdown"><strong>Management Interface</strong> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="/categories" data-no-turbolink="true">Manage Categories</a></li>						
+							<li class="divider"></li>
+							<li><strong><a href="/categories" data-no-turbolink="true">Manage By Category</a></strong></li>						
+							<li class="divider"></li>
 							<li><a href="/macroeconomic_variables" data-no-turbolink="true">Macroeconomic Variables</a></li>
 							<li><a href="/customer_field_values" data-no-turbolink="true">Customer Field Values</a></li>
 							<li><a href="/questions" data-no-turbolink="true">Questions</a></li>
@@ -27,7 +29,7 @@
 							<li><a href="/variables" data-no-turbolink="true">Variables</a></li>
 							<li><a href="/variable_types" data-no-turbolink="true">Variable Types</a></li>
 							<li class="divider"></li>
-							<li><a href="/collect" data-no-turbolink="true">DataCollector</a></li>
+							<li><a ng-click="open()" data-no-turbolink="true">DataCollector</a></li>
 						</ul>
 					</li>		
 				</ul>
