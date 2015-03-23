@@ -5,6 +5,13 @@
 <div class="modal-body">
 	<div>
 		<div class="btn-group" ng-repeat="question in questions">
+			<div class="col-md-8">
+				<div class="form-search">
+					Find question
+					<i class="search-icon glyphicon glyphicon-search"></i> <input class="form-control search-query">
+				</div>
+			</div>
+			<br>
 			<button class="btn" ng-class="{'btn-primary':modal.isCurrentStep(question)}" ng-click="modal.setCurrentStep(question)" ng-show="!modal.canShow(question)">{{question}}</button>
 			<button class="btn btn-warning" style="display:none;">breathing</button>
 		</div>

@@ -13,7 +13,7 @@ modalapp.controller('AppCtrl', ($scope, $modal) ->
 
 #add the handler controller for the $modelValue
 modalapp.controller('ModalCtrl', ($scope, $modalInstance)->
-	modal = this
+	$scope.modal = this
 
 	# stub of the number of questions
 	# we want to retrieve the questions from the database
@@ -30,29 +30,29 @@ modalapp.controller('ModalCtrl', ($scope, $modalInstance)->
 	#$scope.questions = [{"index": 1, "question": "What is your nationality?", "default_answer": "Not answered"}]
 	$scope.questions = ["1. What is your national ID number?"]
 	number_of_questions = 100
-	modal.steps = [1..100]
-	modal.step = 0
+	$scope.modal.steps = [1..100]
+	$scope.modal.step = 0
 
-	$scope.steps = modal.steps
+	$scope.steps = $scope.modal.steps
 	# store questions and answers on modal.wizard
 	# but persist to database on each click through to next question
-	modal.wizard = {question: 1, answer: '' }
+	$scope.modal.wizard = {question: 1, answer: '' }
 
 	# provide a way to retrive the question if it is the current question to be answered
-	modal.isCurrentStep = (step) ->
-		return modal.step is step
+	$scope.modal.isCurrentStep = (step) ->
+		$scope.modal.step is step
 
-	modal.setCurrentStep = (step) ->
-		modal.step = step
+	$scope.modal.setCurrentStep = (step) ->
+		$scope.modal.step = step
 
-	modal.getCurrentStep = ->
-		return modal.steps[modal.step]
+	$scope.modal.getCurrentStep = ->
+		$scope.modal.steps[$scope.modal.step]
 
-	modal.getCurrentQuestion = ->
-		return questions[modal.step]
+	$scope.modal.getCurrentQuestion = ->
+		return questions[$scope.modal.step]
 
-	modal.canShow = (question)->
-		difference = question - modal.step
+	$scope.modal.canShow = (question)->
+		difference = question - $scope.modal.step
 		if difference > 2
 			false
 		else if difference < -2
@@ -60,6 +60,6 @@ modalapp.controller('ModalCtrl', ($scope, $modalInstance)->
 		else
 			true
 
-	modal.getNextLabel = ->
+	$scope.modal.getNextLabel = ->
 		"Next"
 	)
