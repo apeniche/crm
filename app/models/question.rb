@@ -8,4 +8,6 @@ class Question
   field :default_answer, type: String
   field :customer_field_id, type:Integer
   field :question, type: String
+  embedded_in :category
+  
 end

@@ -1,6 +1,92 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Categories</h1>
+<div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <h3 style="color:blue;">Categories, Locked and Unlocked Variables</h3>
+        <div class="list-group list-group-item-default">
+           <strong>
+           <p>There are four types of variables, and four categories which organize the customer's information. These are:
+              <ul>
+                <li>Demographic</li>
+                <li>Financial</li>
+                <li>Control</li>
+                <li>Macroeconomic</li>
+              </ul>
+              <br>
+              Each variable can be locked i.e. it depends on other variables that have to be set first.
+              Or, unlocked, meaning it can be set right away without depending on another variable being set first.
+              To manage variables, click on <a href="variables">Manage Variables</a>
+           </p>
+          </strong>
+        </div>
+      </div>
+</div>
+
+
+
+<ul class="list-group">
+    
+    <div class="row">
+      <h2>DEMOGRAPHIC</h2>
+      <div class="col-md-6 col-md-offset-2">
+        <div class="list-group list-group-item-info">
+           <strong>
+            <a href="/categories/<= category.id >" class="list-group-item list-group-item-info">
+              Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
+              Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
+              Number of Variables: (unknown ;)
+            </a> 
+          </strong>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <div class="list-group list-group-item-info">
+           <strong>
+            <a href="/categories/<= category.id >" class="list-group-item list-group-item-info">
+              Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
+              Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
+              Number of Variables: (unknown ;)
+            </a> 
+          </strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <div class="list-group list-group-item-info">
+           <strong>
+            <a href="/categories/<= category.id >" class="list-group-item list-group-item-info">
+              Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
+              Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
+              Number of Variables: (unknown ;)
+            </a> 
+          </strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <div class="list-group list-group-item-info">
+           <strong>
+            <a href="/categories/<= category.id >" class="list-group-item list-group-item-info">
+              Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
+              Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
+              Number of Variables: (unknown ;)
+            </a> 
+          </strong>
+        </div>
+      </div>
+    </div>
+
+</ul>
+
+<br>
+
 
 <table>
   <thead>
