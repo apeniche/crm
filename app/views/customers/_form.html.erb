@@ -41,13 +41,39 @@
     <%= f.text_field :identification_type, style: "width: 553px;"  %>
   </div>
 
-  <% 5.times do %>
-    <%= "haha, dynamic field, for each field read in customer_fields.all" %>
-    <div class="form-group">
-      <%= f.label :identification_type %><br>
-      <%= f.text_field :identification_type, style: "width: 553px;"  %>
+  <div class="row form-group">
+    <div class="col-md-8">
+      <div style="" class="panel-group collapse in" id="accordion1">
+          <div class="panel">
+            <div class="panel-heading">
+              <h4 class="panel-title"><a class="" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">Display Custom Fields</a></h4>
+            </div>
+            <div style="" id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+                  <% CustomerField.all.each do |field| %>
+                    <div class="form-group">
+                      <%= label_tag "#{field.field_name}" %><br>
+                      <%= text_field_tag "#{field.field_name}"  %>
+                    </div>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h4 class="panel-title"><a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">Hide Custom Fields</a></h4>
+            </div>
+            <div style="height: 0px;" id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+              ...
+              </div>
+            </div>
+          </div>
+        
+      </div>
     </div>
-  <% end %>
+  </div>
+  
 
   <div class="actions">
     <%= f.submit "Add Customer", class: "btn btn-success" %>

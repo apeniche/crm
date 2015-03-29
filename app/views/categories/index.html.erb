@@ -83,7 +83,7 @@
             <a href="/categories/macroeconomic" class="list-group-item list-group-item-info">
               Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
               Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
-              Number of Variables: (unknown ;)
+              Number of Variables: <%= Category.find_by(category_name: "macroeconomic").variables.count %>
             </a> 
           </strong>
         </div>
