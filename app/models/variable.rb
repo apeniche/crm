@@ -8,4 +8,5 @@ class Variable
   field :locked, type: Boolean
 
   embedded_in :category
+  has_many :questions
 end

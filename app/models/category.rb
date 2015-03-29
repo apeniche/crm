@@ -1,6 +1,11 @@
 class Category
   include Mongoid::Document
   field :category_name, type: String
-  embeds_many :questions
+  
+  has_many :questions
   embeds_many :variables
+
+  def to_param
+  	category_name
+  end
 end
