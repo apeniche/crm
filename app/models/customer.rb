@@ -4,4 +4,8 @@ class Customer
   
   field :country_id, type: Integer
   field :name, type: String
+  field :identification_number, type: String
+  field :identification_type, type: String
+  field :firstname, type: String
+  field :lastname, type: String
 end
