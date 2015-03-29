@@ -41,6 +41,14 @@
     <%= f.text_field :identification_type, style: "width: 553px;"  %>
   </div>
 
+  <% 5.times do %>
+    <%= "haha, dynamic field, for each field read in customer_fields.all" %>
+    <div class="form-group">
+      <%= f.label :identification_type %><br>
+      <%= f.text_field :identification_type, style: "width: 553px;"  %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Add Customer", class: "btn btn-success" %>
   </div>

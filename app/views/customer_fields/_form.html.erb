@@ -16,8 +16,8 @@
     <%= f.text_field :field_name %>
   </div>
   <div class="field">
-    <%= f.label :field_type %><br>
-    <%= f.text_field :field_type %>
+    <%= f.label "field type, most often 'text' is appropriate" %><br>
+    <%= f.select :field_type, options_for_select(["Text", "Boolean i.e True or False", "Number", "Date"]) %>
   </div>
   <div class="field">
     <%= f.label :validity_period %><br>
