@@ -2,6 +2,26 @@
 
 <h1>Listing Questions</h1>
 
+<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+<div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <h3 style="color:blue;">Questions, Setting Variables</h3>
+        <div class="list-group list-group-item-default">
+           <strong>
+           <p>You may set questions to be answered for each customer here.
+              Questions can be set targeting one of four categories:
+              Demographic, Financial, Control Questions, and Macroeconomic questions.
+              A question can be selected to set the value of a corresponding variable. 
+              Each variable can be locked i.e. it depends on other variables that have to be set first.
+              Or, unlocked, meaning it can be set right away without depending on another variable being set first.
+              To manage variables, click on <a href="/variables">Manage Variables</a>
+           </p>
+          </strong>
+        </div>
+      </div>
+</div>
+</div>
+
 <ul class="list-group">
   <% @questions.each do |question| %>
     
