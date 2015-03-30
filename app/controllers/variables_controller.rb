@@ -4,7 +4,11 @@ class VariablesController < ApplicationController
   # GET /variables
   # GET /variables.json
   def index
-    @variables = Variable.all
+    @variables = []
+    Category.all.each do |category|
+      category.variables.each {|item| @variables.push item}
+    end
+    @variables
   end
 
   # GET /variables/1
@@ -24,7 +28,8 @@ class VariablesController < ApplicationController
   # POST /variables
   # POST /variables.json
   def create
-    @variable = Variable.new(variable_params)
+    category = Category.find_by(category_name: params[:variable][:category])    
+    @variable = category.variables.build(variable_params)
 
     respond_to do |format|
       if @variable.save
@@ -64,11 +69,12 @@ class VariablesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_variable
-      @variable = Variable.find(params[:id])
+      @category = Category.find_by(category_name: params[:category_id])
+      @variable = @category.variables.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def variable_params
-      params.require(:variable).permit(:variable_type, :type_name, :description)
+      params.require(:variable).permit(:variable_type, :type_name, :description, :variable_name, :locked)
     end
 end

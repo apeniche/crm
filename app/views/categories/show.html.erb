@@ -1,9 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Category name:</strong>
-  <%= @category.category_name %>
-</p>
+<div class="hero">
+	<div class="row">
+		<div class="col-md-5 col-md-offset-4">
+		  <h2><%= @category.category_name.try(:humanize) %></h2>		  
+		</div>
+	</div>
+</div>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="row">
+	<div class="col-md-5 col-md-offset-1">
+		<h3>Questions for Category: <%= @category.category_name %></h3>
+	    <div class="selecter multiple" tabindex="0">
+	      <div class="selecter-options">
+			<% @category.questions.each do |question| %>
+				<span class="selecter-item" data-value="1"><a href="/questions/<%= question.id %>"><%= question.body %></a></span>
+			<% end %>
+			<br>
+	      </div>
+	    </div>
+	</div>
+
+	<div class="col-md-5">
+		<h3>Variables for Category: <%= @category.category_name %></h3>
+	    <div class="selecter multiple" tabindex="0">
+	      <div class="selecter-options">
+			<% @category.variables.each do |variable| %>
+				<span class="selecter-item" data-value="1"><a href="/categories/<%= @category.category_name %>/variables/<%= variable.id %>"><%= variable.variable_name %></a></span>
+			<% end %>
+			<br>
+	      </div>
+	    </div>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_category_path(@category),  class: "btn" %> |
+<%= link_to 'Back', categories_path, class: "btn btn-info" %>
+

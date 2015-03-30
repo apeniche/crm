@@ -20,6 +20,14 @@
     <%= f.text_field :type_name %>
   </div>
   <div class="field">
+    <%= f.label :variable_name %><br>
+    <%= f.text_field :variable_name %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.select :category, options_for_select(["demographic", "financial", "control", "macroeconomic"]) %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
