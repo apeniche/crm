@@ -34,8 +34,8 @@
            <strong>
             <a href="/categories/demographic" class="list-group-item list-group-item-info">
               Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
-              Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
-              Number of Variables: (unknown ;)
+              Number of questions #: <span class="list-group-item list-group-item-info"><%= Category.find_by(category_name: "demographic").questions.count %></span>
+              Number of Variables: <%= Category.find_by(category_name: "demographic").variables.count %>
             </a> 
           </strong>
         </div>
@@ -49,9 +49,9 @@
         <div class="list-group list-group-item-info">
            <strong>
             <a href="/categories/financial" class="list-group-item list-group-item-info">
-              Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
-              Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
-              Number of Variables: (unknown ;)
+              Category name: <span class="list-group-item list-group-item-danger">Financial Category</span>
+              Number of questions #: <span class="list-group-item list-group-item-info"><%= Category.find_by(category_name: "financial").questions.count %></span>
+              Number of Variables: <%= Category.find_by(category_name: "financial").variables.count %>
             </a> 
           </strong>
         </div>
@@ -65,9 +65,9 @@
         <div class="list-group list-group-item-info">
            <strong>
             <a href="/categories/control" class="list-group-item list-group-item-info">
-              Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
-              Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
-              Number of Variables: (unknown ;)
+              Category name: <span class="list-group-item list-group-item-danger">Control Category</span>
+              Number of questions #: <span class="list-group-item list-group-item-info"><%= Category.find_by(category_name: "control").questions.count %></span>
+              Number of Variables: <%= Category.find_by(category_name: "control").variables.count %>
             </a> 
           </strong>
         </div>
@@ -81,8 +81,8 @@
         <div class="list-group list-group-item-info">
            <strong>
             <a href="/categories/macroeconomic" class="list-group-item list-group-item-info">
-              Category name: <span class="list-group-item list-group-item-danger">Demographic Category</span>
-              Number of questions #: <span class="list-group-item list-group-item-info"><%= 3..5 %></span>
+              Category name: <span class="list-group-item list-group-item-danger">Macroeconomic Category</span>
+              Number of questions #: <span class="list-group-item list-group-item-info"><%= Category.find_by(category_name: "macroeconomic").questions.count %></span>
               Number of Variables: <%= Category.find_by(category_name: "macroeconomic").variables.count %>
             </a> 
           </strong>

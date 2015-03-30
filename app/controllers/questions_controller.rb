@@ -25,6 +25,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+    @question.category = Category.find_by(category_name: params[:question][:category])
 
     respond_to do |format|
       if @question.save

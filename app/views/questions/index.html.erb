@@ -30,7 +30,7 @@
         <div class="list-group">
           <a href="/questions/<%= question.id %>" class="list-group-item list-group-item-info">
             Question: <span class="list-group-item list-group-item-danger"><%= question.body %></span>
-            Category: <span class="list-group-item list-group-item-info"><%= "question.category.category_name" %></span>
+            Category: <span class="list-group-item list-group-item-info"><%= question.category.category_name %></span>
             Time Interval, in months: <span class="list-group-item list-group-item-warning"><%= question.interval %></span>
             Default Answer: <span class="list-group-item list-group-item-warning"><%= question.default_answer %></span>
           </a>       
