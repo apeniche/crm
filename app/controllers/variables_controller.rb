@@ -18,18 +18,22 @@ class VariablesController < ApplicationController
 
   # GET /variables/new
   def new
+    @variable_types = []
+    VariableType.distinct(:name).each {|e| @variable_types.push e}
     @variable = Variable.new
   end
 
   # GET /variables/1/edit
   def edit
+    @variable_types = []
+    VariableType.distinct(:name).each {|e| @variable_types.push e}
   end
 
   # POST /variables
   # POST /variables.json
   def create
-    category = Category.find_by(category_name: params[:category_id])    
-    @variable = category.variables.build(variable_params)
+    category = Category.find_by(category_name: params[:variable][:category])    
+    @variable = category.try(:variables).build(variable_params)
 
     respond_to do |format|
       if @variable.save
@@ -77,6 +81,6 @@ class VariablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def variable_params
-      params.require(:variable).permit(:variable_type, :type_name, :description, :variable_name, :locked)
+      params.require(:variable).permit(:variable_type, :type_number, :description, :variable_name, :locked)
     end
 end

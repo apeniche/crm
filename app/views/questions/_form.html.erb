@@ -20,7 +20,7 @@
     <%= f.select :category, options_for_select(["demographic", "financial", "control", "macroeconomic"]) %>
   </div>
   <div class="field">
-    <%= f.label :sets_value_of_variable %><br>
+    <%= f.label :sets_value_of_variable %>(Question has to be saved for options to be generated)<br>
     <%= f.select :variable, options_for_select(@variables.try(:map) {|variable| variable.variable_name}) %>
   </div>
   <div class="field">

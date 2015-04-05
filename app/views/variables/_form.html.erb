@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :variable_type %><br>
-    <%= f.number_field :variable_type %>
+    <%= f.select :variable_type, options_for_select(@variable_types) %>
   </div>
   <div class="field">
-    <%= f.label :type_name %><br>
-    <%= f.text_field :type_name %>
+    <%= f.label :type_number %><br>
+    <%= f.number_field :type_number %>
   </div>
   <div class="field">
     <%= f.label :variable_name %><br>
