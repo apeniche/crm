@@ -28,12 +28,12 @@ class VariablesController < ApplicationController
   # POST /variables
   # POST /variables.json
   def create
-    category = Category.find_by(category_name: params[:variable][:category])    
+    category = Category.find_by(category_name: params[:category_id])    
     @variable = category.variables.build(variable_params)
 
     respond_to do |format|
       if @variable.save
-        format.html { redirect_to @variable, notice: 'Variable was successfully created.' }
+        format.html { redirect_to category_variable_path(category, @variable), notice: 'Variable was successfully created.' }
         format.json { render :show, status: :created, location: @variable }
       else
         format.html { render :new }
@@ -45,9 +45,11 @@ class VariablesController < ApplicationController
   # PATCH/PUT /variables/1
   # PATCH/PUT /variables/1.json
   def update
+    #@category = Category.find_by(category_name: params[:variable][:category])
+    #@variable = @category.variables.find(params[:variable][:id])
     respond_to do |format|
       if @variable.update(variable_params)
-        format.html { redirect_to @variable, notice: 'Variable was successfully updated.' }
+        format.html { redirect_to category_variable_path(@category, @variable), notice: 'Variable was successfully updated.' }
         format.json { render :show, status: :ok, location: @variable }
       else
         format.html { render :edit }
@@ -69,7 +71,7 @@ class VariablesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_variable
-      @category = Category.find_by(category_name: params[:category_id])
+      @category = Category.find_by(category_name: params[:category_id]) 
       @variable = @category.variables.find(params[:id])
     end
 

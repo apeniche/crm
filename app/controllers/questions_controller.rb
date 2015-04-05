@@ -15,10 +15,12 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    @variables = @question.try(:category).try(:variables).try(:to_a) || []
   end
 
   # GET /questions/1/edit
   def edit
+    @variables = @question.try(:category).try(:variables).try(:to_a)
   end
 
   # POST /questions

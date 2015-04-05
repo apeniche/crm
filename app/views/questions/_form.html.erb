@@ -20,6 +20,10 @@
     <%= f.select :category, options_for_select(["demographic", "financial", "control", "macroeconomic"]) %>
   </div>
   <div class="field">
+    <%= f.label :sets_value_of_variable %><br>
+    <%= f.select :variable, options_for_select(@variables.try(:map) {|variable| variable.variable_name}) %>
+  </div>
+  <div class="field">
     <%= f.label :interval %><br>
     <%= f.text_field :interval %>
   </div>
