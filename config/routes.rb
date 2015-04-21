@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :band_members
+
   resources :categories do 
-    resources :questions, :variables
+    resources :variables
+    resources :bands
   end
 
   resources :variables
