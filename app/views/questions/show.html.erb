@@ -11,7 +11,14 @@
 	            Category: <span class="list-group-item list-group-item-info"><%= @question.category.try(:category_name) %></span>
 	            Time Interval: <span class="list-group-item list-group-item-warning"><%= @question.interval %></span>
 	            Default Answer: <span class="list-group-item list-group-item-warning"><%= @question.default_answer %></span>
-              Sets Variable: <span class="list-group-item list-group-item-warning"><%= @question.category.variables.find(@question.variable_id).variable_name || "Not set" %></span>          	   
+              Sets Variable: <span class="list-group-item list-group-item-warning"><%=
+              begin
+                
+                @question.category.variables.find(@question.variable_id).variable_name
+              rescue Exception 
+                "Not set"
+              end
+                %></span>          	   
             </a>
           </strong>       
         </div>

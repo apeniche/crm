@@ -55,7 +55,9 @@ class QuestionsController < ApplicationController
     @question.save
     respond_to do |format|
       #@question.variable = @question.category.variables.find_by(variable_name: params[:question][:variable]).first_or_create!
-      if @question.update(update_params)
+      if @question.delete
+        @category.questions.delete(@question)
+        @variable.questions.delete(@question)
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
