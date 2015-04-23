@@ -43,9 +43,19 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
+    @category = Category.find_by({category_name: params[:question][:category]})
+    @variable = @category.variables.find_or_create_by({variable_name: params[:question][:variable]})
+    @newquestion = Question.new(update_params)
+    @newquestion.category = @category
+    @newquestion.variable = @variable
+    @variable.questions << @newquestion
+    @variable.questions.delete(@question)
+    @variable.save
+
+    @question.save
     respond_to do |format|
-      @question.variable = @question.category.variables.find_by(variable_name: params[:question][:variable])
-      if @question.update(question_params)
+      #@question.variable = @question.category.variables.find_by(variable_name: params[:question][:variable]).first_or_create!
+      if @question.update(update_params)
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
@@ -75,4 +85,9 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:body, :category, :interval, :default_answer)
     end
+
+    def update_params
+      params.require(:question).permit(:body, :interval, :default_answer)
+    end
+
 end

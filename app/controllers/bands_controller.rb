@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-  before_action :set_band, only: [:update, :destroy]
+  before_action :set_band, only: [:destroy]
 
   # GET /bands
   # GET /bands.json
@@ -48,9 +48,11 @@ class BandsController < ApplicationController
   # PATCH/PUT /bands/1
   # PATCH/PUT /bands/1.json
   def update
+    @category = Category.find_by(category_name: params[:category_id])
+    @band = @category.bands.find(params[:id])
     respond_to do |format|
       if @band.update(band_params)
-        format.html { redirect_to @band, notice: 'Band was successfully updated.' }
+        format.html { redirect_to category_band_path(@category, @band), notice: 'Band was successfully updated.' }
         format.json { render :show, status: :ok, location: @band }
       else
         format.html { render :edit }
