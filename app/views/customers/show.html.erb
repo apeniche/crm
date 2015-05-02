@@ -8,9 +8,15 @@
         <div class="list-group list-group-item-info">
           <strong>
 	      	<a href="/customers/<%= @customer.id %>" class="list-group-item list-group-item-info">
-	            Customer's Country ID: <span class="list-group-item list-group-item-danger"><%= @customer.country_id %></span>	            
           		Customer's Name: <span class="list-group-item list-group-item-danger"><%= @customer.name %></span>
-          	</a>
+        	    Customer's Country Name: <span class="list-group-item list-group-item-danger"><%= @customer.country_name %></span>
+              Country ID: <span class="list-group-item list-group-item-danger"><%= @customer.country_id %></span>              
+            
+              Customer's Identification Number: <span class="list-group-item list-group-item-danger"><%= @customer.identification_number %></span>
+              Customer's Identification Type: <span class="list-group-item list-group-item-danger"><%= @customer.identification_type %></span>
+              Firstname: <span class="list-group-item list-group-item-danger"><%= @customer.firstname %></span>
+              Lastname: <span class="list-group-item list-group-item-danger"><%= @customer.lastname %></span>
+          </a>
           </strong>       
         </div>
       </div>
