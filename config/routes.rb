@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :answers
+
   resources :band_members
 
   resources :categories do 

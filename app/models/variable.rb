@@ -10,4 +10,5 @@ class Variable
 
   embedded_in :category
   has_many :questions
+  belongs_to :answer
 end

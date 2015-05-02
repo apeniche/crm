@@ -10,4 +10,5 @@ class Question
   
   belongs_to :category
   belongs_to :variable
+  has_one :answer
 end
