@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Customer Field Values</h1>
+
+<ul class="list-group">
+  <% @customer_field_values.each do |customer_field_value| %>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="list-group list-group-item-info">
+          <a href="/customer_field_values/<%= customer_field_value.id %>" class="list-group-item list-group-item-info">
+            Customer: <span class="list-group-item list-group-item-danger"><%= customer_field_value.customer_id %></span>
+            Customer field: <span class="list-group-item list-group-item-info"><%= customer_field_value.customer_field_id %></span>
+            Field value: <span class="list-group-item list-group-item-warning"><%= customer_field_value.field_value %></span>
+          </a>       
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</ul>
+
+<br>
+
+
+<%= link_to 'New Customer field value', new_customer_field_value_path, class: "btn btn-raised btn-primary" %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<ul class="list-group">
+  
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="list-group">
+          <strong>
+	      	<a href="/questions/<%= @question.id %>" class="list-group-item list-group-item-info">
+	            Question: <span class="list-group-item list-group-item-danger"><%= @question.body %></span>
+	            Category: <span class="list-group-item list-group-item-info"><%= @question.category.try(:category_name) %></span>
+	            Time Interval: <span class="list-group-item list-group-item-warning"><%= @question.interval %></span>
+	            Default Answer: <span class="list-group-item list-group-item-warning"><%= @question.default_answer %></span>
+              Sets Variable: <span class="list-group-item list-group-item-warning"><%=
+              begin
+                
+                @question.category.variables.find(@question.variable_id).variable_name
+              rescue Exception 
+                "Not set"
+              end
+                %></span>          	   
+            </a>
+          </strong>       
+        </div>
+      </div>
+    </div>
+</ul>
+
+<%= link_to 'Edit', edit_question_path(@question), class: "btn" %> |
+<%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> |
+<%= link_to 'Back', questions_path, class: "btn btn-info" %>

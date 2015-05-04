@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @country.name %>
-</p>
+<ul class="list-group">
+  
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+      	<h3> <%= @country.name %> </h3>
+        <div class="list-group list-group-item-info">
+          <strong>
+	      	<a href="/countries/<%= @country.id %>" class="list-group-item list-group-item-info">
+	            Name: <span class="list-group-item list-group-item-danger"><%= @country.name %></span>
+	            Countrynumber: <span class="list-group-item list-group-item-info"><%= @country.countrynumber %></span>	           
+          	</a>
+          </strong>       
+        </div>
+      </div>
+    </div>
+</ul>
 
-<p>
-  <strong>Countrynumber:</strong>
-  <%= @country.countrynumber %>
-</p>
+<%= link_to 'Edit', edit_country_path(@country), class: "btn" %> |
+<%= link_to 'Destroy', @country, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> |
+<%= link_to 'Back', countries_path, class: "btn btn-info" %>
 
-<%= link_to 'Edit', edit_country_path(@country) %> |
-<%= link_to 'Back', countries_path %>

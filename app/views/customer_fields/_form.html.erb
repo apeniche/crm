@@ -1,0 +1,33 @@
+<%= form_for(@customer_field) do |f| %>
+  <% if @customer_field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer_field.errors.count, "error") %> prohibited this customer_field from being saved:</h2>
+
+      <ul>
+      <% @customer_field.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :field_name %><br>
+    <%= f.text_field :field_name %>
+  </div>
+  <div class="field">
+    <%= f.label "field type, most often 'text' is appropriate" %><br>
+    <%= f.select :field_type, options_for_select(["Text", "Boolean i.e True or False", "Number", "Date"]) %>
+  </div>
+  <div class="field">
+    <%= f.label :validity_period %><br>
+    <%= f.number_field :validity_period %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_field_id %><br>
+    <%= f.number_field :customer_field_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Macroeconomic Variables</h1>
+
+<ul class="list-group">
+  <% @macroeconomic_variables.each do |macroeconomic_variable| %>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="list-group list-group-item-info">
+          <a href="/macroeconomic_variables/<%= macroeconomic_variable.id %>" class="list-group-item list-group-item-info">
+            Country ID: <span class="list-group-item list-group-item-danger"><%= macroeconomic_variable.country_id %></span>
+            Variable name: <span class="list-group-item list-group-item-info"><%= macroeconomic_variable.variable_name %></span>
+            Variable type: <span class="list-group-item list-group-item-warning"><%= macroeconomic_variable.variable_type %></span>
+            Variable value: <span class="list-group-item list-group-item-danger"><%= macroeconomic_variable.variable_value %></span>
+          </a>       
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</ul>
+
+<br>
+
+
+<%= link_to 'New Macroeconomic variable', new_macroeconomic_variable_path, class: "btn btn-raised btn-primary" %>

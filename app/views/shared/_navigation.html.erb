@@ -1,0 +1,55 @@
+<nav class="navbar navbar-small" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="btn btn-warning btn-raised navbar-btn btn-lg" href="/" data-no-turbolink="true"><strong>CloudCRM</strong></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div ng-app="App" ng-controller="AppCtrl as app" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="/customers" data-no-turbolink="true"><strong>Manage Customers</strong></a></li>
+					<li><a href="/questions" data-no-turbolink="true"><strong>Set Questions</strong></a></li>
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-no-turbolink="true" data-toggle="dropdown"><strong>Management Interface</strong> <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li class="divider"></li>
+							<li><strong><a href="/categories" data-no-turbolink="true">Manage By Category</a></strong></li>						
+							<li class="divider"></li>
+							<li><a href="/customer_fields" data-no-turbolink="true">Manage Customer Fields</a></li>							
+							<li><a href="/macroeconomic_variables" data-no-turbolink="true">Macroeconomic Variables</a></li>
+							<li><a href="/customer_field_values" data-no-turbolink="true">Customer Field Values</a></li>
+							<li><a href="/questions" data-no-turbolink="true">Questions</a></li>
+							<li><a href="/customers" data-no-turbolink="true">Customers</a></li>
+							<li><a href="/countries" data-no-turbolink="true">Countries</a></li>
+							<li><a href="/variables" data-no-turbolink="true">Variables</a></li>
+							<li><a href="/variable_types" data-no-turbolink="true">Variable Types</a></li>
+							<li><a href="/bands" data-no-turbolink="true">Bands</a></li>
+							<li><a href="/band_members" data-no-turbolink="true">Band Members</a></li>
+							
+							<li class="divider"></li>
+							<li><a ng-click="open()" data-no-turbolink="true">DataCollector</a></li>
+						</ul>
+					</li>		
+				</ul>
+				<ul class="nav navbar-nav navbar-right nav-pills">
+					<li><a ng-click="open()" class="ng-scope bg-info active btn-default"><strong>Enter Customer Answers <span class="badge">!</span></strong></a></li>
+					<li><a href="javascript:void(0)"><strong>About</strong></a></li>
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Logout</strong> <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0)">Action</a></li>
+							<li><a href="javascript:void(0)">Another action</a></li>
+							<li><a href="javascript:void(0)">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:void(0)">Separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>

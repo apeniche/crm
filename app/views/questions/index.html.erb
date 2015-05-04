@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Questions</h1>
+
+<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+          <h3 style="color:blue;">Questions, Setting Variables</h3>
+          <div class="list-group list-group-item-default">
+             <strong>
+             <p>You may set questions to be answered for each customer here.
+                Questions can be set targeting one of four categories:
+                Demographic, Financial, Control Questions, and Macroeconomic questions.
+                A question can be selected to set the value of a corresponding variable. 
+                Each variable can be locked i.e. it depends on other variables that have to be set first.
+                Or, unlocked, meaning it can be set right away without depending on another variable being set first.
+                To manage variables, click on <a href="/variables">Manage Variables</a>
+             </p>
+            </strong>
+          </div>
+        </div>
+  </div>
+</div>
+
+<ul class="list-group">
+  <% @questions.each do |question| %>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="list-group">
+          <a href="/questions/<%= question.id %>" class="list-group-item list-group-item-info">
+            Question: <span class="list-group-item list-group-item-danger"><%= question.body %></span>
+            Category: <span class="list-group-item list-group-item-info"><%= question.category.try(:category_name) %></span>
+            Time Interval, in months: <span class="list-group-item list-group-item-warning"><%= question.interval %></span>
+            Default Answer: <span class="list-group-item list-group-item-warning"><%= question.default_answer %></span>
+          </a>       
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</ul>
+
+<br>
+
+<%= link_to 'New Question', new_question_path, class: "btn btn-raised btn-primary" %>
+
+
+

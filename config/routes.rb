@@ -1,5 +1,26 @@
 Rails.application.routes.draw do
 
+  resources :answers
+
+  resources :band_members
+
+  resources :categories do 
+    resources :variables
+    resources :bands
+  end
+
+  resources :variables
+
+  resources :variable_types
+
+  resources :macroeconomic_variables
+
+  resources :customer_field_values
+
+  resources :customer_fields
+
+  resources :questions
+
   resources :customers
 
   resources :countries

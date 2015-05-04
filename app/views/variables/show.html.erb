@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<ul class="list-group">
+  
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+      	<h3> <%= @variable.variable_name %>  ... in category <%= link_to("#{@variable.category.category_name}", @variable.category) %></h3>
+        <div class="list-group list-group-item-default">
+          <strong>
+	      	  <a href="#" class="list-group-item list-group-item-info">
+	            Variable type: <span class="list-group-item list-group-item-danger"><%= @variable.variable_type %></span>
+	            Type Number: <span class="list-group-item list-group-item-info"><%= @variable.type_number %></span>	           
+	            Description: <span class="list-group-item list-group-item-info"><%= @variable.description %></span>
+          	</a>
+          </strong>       
+        </div>
+      </div>
+    </div>
+</ul>
+
+
+<%= link_to 'Edit', edit_category_variable_path(@variable.category, @variable), class: "btn" %> |
+<%= link_to 'Destroy', @variable, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> |
+<%= link_to 'Back', variables_path, class: "btn btn-info" %>

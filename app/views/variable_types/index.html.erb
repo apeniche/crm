@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Variable Types</h1>
+
+<ul class="list-group">
+  <% @variable_types.each do |variable_type| %>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="list-group list-group-item-info">
+          <a href="/variable_types/<%= variable_type.id %>" class="list-group-item list-group-item-info">
+            Variable Type Number: <span class="list-group-item list-group-item-danger"><%= variable_type.number %></span>
+            Variable Type Name: <span class="list-group-item list-group-item-info"><%= variable_type.name %></span>
+            Variable Type Description: <span class="list-group-item list-group-item-warning"><%= variable_type.description %></span>
+          </a>       
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</ul>
+
+<br>
+
+<%= link_to 'New Variable type', new_variable_type_path, class: "btn btn-raised btn-primary" %>

@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  
+  layout 'modal'
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
@@ -72,6 +74,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:country_id)
+      params.require(:customer).permit(:country_id, :country_name, :name, :identification_number, :identification_type, :firstname, :lastname)
     end
 end

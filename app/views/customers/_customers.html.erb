@@ -1,5 +1,5 @@
 
-<h1 class="col-md-offset-4">Welcome to CloudCRM</h1>
+<h1 class="col-md-offset-4">CloudCRM</h1>
 
 <h2>Your Current Customers are Listed Below</h2>
 
@@ -14,19 +14,19 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.country_id %></td>
-        <td>Alex Jones</td>
+        <td><%= customer.country_name %> &nbsp</td>
+        <td><%= customer.name || "Alex Jones" %> &nbsp</td>
         <td></td>
         <td><%= link_to 'Show', customer, :class => 'btn btn-success' %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn btn-warning'  %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'  %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn btn-success'  %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-success'  %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to 'New Customer', new_customer_path, class: "btn btn-warning" %>
+<%= link_to('New Customer', new_customer_path, class: "btn btn-success", data: { no_turbolink: true}) %>
 
 
 <br>

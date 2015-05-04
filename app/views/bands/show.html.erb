@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @band.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @band.country %>
+</p>
+
+<%= link_to 'Edit', edit_category_band_path(@category, @band) %> |
+<%= link_to 'Back', category_bands_path(@category) %>
