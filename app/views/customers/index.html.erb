@@ -1,24 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel" style="margin-top: -20px;">
-  <!-- Overlay -->
-  
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item slides active">
-      <div class="slide-1"></div>
-      <div class="hero">
-
-        <%= render 'customers' %>
-
-        <a href="/collect" data-no-turbolink="true"><button class="btn btn-hero btn-lg btn-primary" role="button">See all features</button></a>
-      </div>
-    </div>    
-  </div> 
+<div class="index">
+  <%= render 'customers' %>
 </div>
+
+        
 
 
 <style>
+
+.index {
+  background-color: #dcf4f7;
+}
+
+.list-group {
+  background-image: url(<%= asset_path 'pale.png' %>); 
+}
+
+.logo {
+  background-image: url(<%= asset_path 'logo.jpg' %>); 
+  background-repeat: no-repeat;
+}
+
+.fade-carousel .slides .slide-1 {
+  background-image: url(<%= asset_path 'landing.jpg' %>); 
+}
   /*
 Fade content bs-carousel with hero headers
 Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
