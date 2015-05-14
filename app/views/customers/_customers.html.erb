@@ -1,32 +1,31 @@
+<ul class="list-group">
+  <h1 class="col-md-offset-4 logo">.</h1>
 
-<h1 class="col-md-offset-4">CloudCRM</h1>
 
 <h2>Your Current Customers are Listed Below</h2>
+  <% @customers.each do |customer| %>
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="list-group list-group-item-success">
+          <a href="/customers/<%= customer.id %>" class="list-group-item list-group-item-info">
+            <span class="list-group-item list-group-item-danger"><%= customer.name %></span>
+            Country: <span class="list-group-item list-group-item-info"><%= customer.country_name %></span>
+            Time Interval, in months: <span class="list-group-item list-group-item-warning"><%= "question.interval" %></span>
+            Default Answer: <span class="list-group-item list-group-item-warning"><%= "question.default_answer" %></span>
+          </a>       
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Country</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @customers.each do |customer| %>
-      <tr>
-        <td><%= customer.country_name %> &nbsp</td>
-        <td><%= customer.name || "Alex Jones" %> &nbsp</td>
-        <td></td>
-        <td><%= link_to 'Show', customer, :class => 'btn btn-success' %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn btn-success'  %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-success'  %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</ul>
 
 <br>
-<%= link_to('New Customer', new_customer_path, class: "btn btn-success", data: { no_turbolink: true}) %>
 
+<div class="col-md-offset-5">
+  <%= link_to 'New Question', new_question_path, class: "btn btn-raised btn-primary" %>
+  <%= link_to('New Customer', new_customer_path, class: "btn btn-success", data: { no_turbolink: true}) %>
+</div>
 
 <br>
